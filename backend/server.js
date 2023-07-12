@@ -8,9 +8,9 @@ const cors = require("cors");
  
 const corsOptions = {
   credentials: true,
-  origin: ["http://localhost:3000"],
+  origin: ["http://localhost:3000","https://cryptoapp.onrender.com"], 
 };
-
+ 
 const app = express();
 
 app.use(cookieParser());
@@ -18,7 +18,7 @@ app.use(cookieParser());
  app.use(cors(corsOptions));
 
 app.use(
-  cors({
+  cors({ 
     origin: function (origin, callback) {
       return callback(null, true);
     },
@@ -38,3 +38,8 @@ app.use("/storage", express.static("storage"));
 app.use(errorHandler);
 
 app.listen(PORT, console.log(`Backend is running on port: ${PORT}`));
+// app.use(express.static(path.resolve("./build/public")));
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve("./frontend/build/index.html"));
+// });

@@ -5,7 +5,7 @@ const commentController = require('../controller/commentController');
 const auth = require('../middlewares/auth');
 
 const router = express.Router();
-router.get('/test',(req,res)=> res.json({msg: 'Working'}))
+
 // user
 
 // register
